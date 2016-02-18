@@ -1,0 +1,39 @@
+.yts-logo {
+  display: inline-block;
+
+  font-size: 6em;
+  font-family: "Fjalla One", sans-serif;
+  font-style: normal;
+  line-height: 1.4em;
+
+  @include size(2.5em 1.5em);
+
+  border: 0.1em solid white;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  @include user-select(none);
+
+  .h {
+    @include position(relative, null null null 0.025em);
+  }
+
+  .n {
+    @include position(relative, null 0.025em null null);
+  }
+
+
+  &.animated {
+    .h, .n { @include animation(bounce 2.0s ease infinite); }
+    .n     { @include animation-delay(0.25s); }
+  }
+}
+
+@include keyframes(bounce) {
+  0%, 10%, 25%, 40%, 50% { @include transform(translateY(0)); }
+  20% { @include transform(translateY(-0.75em)); }
+  30% { @include transform(translateY(-0.375em)); }
+}

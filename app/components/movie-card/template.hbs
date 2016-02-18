@@ -1,0 +1,25 @@
+<div class="movie-title">
+  <img src="{{movie.smallCoverImage}}" />
+  <h3>{{link-to movie.title "movies.show" movie.id class="movie-link" }}</h3>
+  <div class="source">
+    <a href="{{movie.url}}" target="_blank" class="source-link">Visit</a>
+  </div>
+</div>
+
+<div class="metadata">
+  <span class="left">
+    <span class="submitted">{{movie.year}}</span>
+  </span>
+
+
+  <span class="right">
+    {{#if story.votable}}
+      <span class="points">{{story.points}} points</span>
+    {{/if}}
+
+    {{#if story.commentable}}
+      <span class="comments">{{#link-to "stories.show.comments" story.id (query-params highlight=null)}}{{story.commentsCount}} comments{{/link-to}}</span>
+    {{/if}}
+  </span>
+</div>
+

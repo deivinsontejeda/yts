@@ -1,0 +1,70 @@
+.movie-card {
+  padding: 1em;
+  background: $faded;
+  border-left: 4px solid transparent;
+  outline: 1px solid $ultra-light-gray;
+  margin-bottom: 1px;
+
+  .movie-title {
+    min-height: 3em;
+  }
+
+  &.active {
+    border-left: 4px solid $orange;
+    background: white;
+  }
+
+  h3 {
+    margin: 0 0.2em 0 0;
+    font-size: 1em;
+    line-height: 1.4;
+  }
+
+  .movie-link {
+    color: $dark-gray;
+  }
+
+  img {
+    float: left;
+    padding-right: 0.9em;
+  }
+
+  .movie-link:visited {
+    color: $medium-gray;
+  }
+
+  .movie-link.active, .movie-link.active:visited {
+    color: $dark-gray;
+  }
+
+  p {
+    margin: 0.5em 0 1em 0;
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  .metadata {
+    margin: 0.2em 0.25em 0 0;
+    overflow: hidden;
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    > span {
+      font-size: 0.8em;
+    }
+
+    span, a {
+      color: $light-gray;
+    }
+
+    .points:after {
+      content: " | ";
+    }
+  }
+}

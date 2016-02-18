@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    YTS_BASE_URL: "https://yts.ag/api/v2",
     modulePrefix: 'yts',
     environment: environment,
     baseURL: '/',
@@ -12,8 +13,18 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'connect-src': "'self' https://yts.ag",
+      'img-src': "'self' https://yts.ag",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'style-src': "'self' http://fonts.googleapis.com",
+      'media-src': "'self'"
+    },
 
     APP: {
+      AMOUNT_ELEMENTS: 3
       // Here you can pass flags/options to your application instance
       // when it is created
     }
@@ -40,7 +51,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.AMOUNT_ELEMENTS = 20;
   }
 
   return ENV;
